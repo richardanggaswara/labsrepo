@@ -1,0 +1,34 @@
+<odoo>
+  <data>
+
+      <!-- <menuitem name="Overtime" id="data_master_menu" 
+                sequence="0" 
+                web_icon="data_master,static/description/icon.png" />
+
+        <menuitem name="Data Station" id="data_station_menu" 
+                  sequence="0"
+                  parent="data_master_menu" 
+                  web_icon="data_master,static/description/icon.png"
+                  action="hr.menu_hr_department_tree"
+                   />
+        <menuitem name="Data Division" id="data_division_menu" 
+                  sequence="0"
+                  parent="data_master_menu" 
+                  web_icon="data_master,static/description/icon.png"
+                  action="hr.menu_hr_department_tree"
+                   /> 
+        <menuitem name="Position" id="position_menu" 
+                  sequence="0"
+                  parent="data_master_menu" 
+                  web_icon="data_master,static/description/icon.png"
+                  action="hr.menu_view_hr_job"
+                   /> 
+
+        <menuitem name="Report Overtime" id="report_overtime_menu" 
+                  sequence="0"
+                  parent="a_overtime.report_overtime" 
+                  web_icon="data_master,static/description/icon.png"
+                  action="action_report_overtime" 
+                  /> -->
+  </data>
+</odoo>

@@ -1,0 +1,158 @@
+<odoo>
+  <data>
+
+    <record id="input_form" model="ir.ui.view">
+      <field name="name">input.load.form</field>
+      <field name="model">input.load</field>
+      <field name="arch" type="xml">
+        <form string="Load Requirements">
+          <header>
+            <button name="email_to_sm" string="Send Email to Station Manager" type="object" class="btn-primary"/>
+          </header>
+          <sheet>
+              <group>
+                <field name="name" required="1"/>
+                <label for="tanggal_mulai"/>
+                <div>
+                    <field name="tanggal_mulai" class="oe_inline"/> To
+                    <field name="tanggal_selesai" nolabel="1" class="oe_inline"/>
+                </div>
+                <!-- <field name="type_load" string="Load Type" required="1"/> -->
+              </group>   
+              <notebook>
+                <page string="Weekday">
+                  <field name="weekday_ids">
+                    <tree editable="bottom" delete="0" create="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="Weekend">
+                  <field name="weekend_ids">
+                    <tree editable="bottom" delete="0" create="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="Holiday">
+                  <field name="holiday_ids">
+                    <tree editable="bottom" delete="0" create="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+              </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="input_load_tree" model="ir.ui.view">
+      <field name="name">input.load.tree</field>
+      <field name="model">input.load</field>
+      <field name="arch" type="xml">
+        <tree string="Load Requirements">
+          <field name="name"/>
+          <field name="tanggal_mulai"/>
+          <field name="tanggal_selesai"/>
+          <!-- <field name="weekday_ids"/> -->
+          <!-- <field name="weekend_ids"/> -->
+          <!-- <field name="holiday_ids"/> -->
+        </tree>
+      </field>
+    </record>
+
+
+    <record id="view_module_pivot_" model="ir.ui.view">
+            <field name="name">input.load.pivot</field>
+            <field name="model">input.load</field>
+            <field name="arch" type="xml">
+                <pivot string="Load Requirements"> 
+                </pivot>
+       </field>
+    </record>
+
+
+
+    <record id="input_load_action" model="ir.actions.act_window">
+      <field name="name">Load Requirements</field>
+      <field name="res_model">input.load</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,pivot,form</field>
+    </record>
+
+
+
+
+
+
+
+
+  </data>
+</odoo>

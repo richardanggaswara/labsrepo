@@ -1,0 +1,168 @@
+<odoo>
+  <data>
+
+        <!-- MenuItems -->
+        <menuitem id="ohrms_overtime.overtime_submenu" name="Overtime"
+                  groups="base.group_user" web_icon="a_overtime,static/description/icon.png" sequence="2"/>
+        
+        <menuitem id="ohrms_overtime.overtime" name="Overtime"
+                  parent="ohrms_overtime.overtime_submenu"
+                  action="ohrms_overtime.hr_overtime_action"
+                  groups="base.group_user"/>
+
+        <menuitem id="report_overtime" name="Report"
+                  sequence="99"
+                  parent="ohrms_overtime.overtime_submenu"
+                  action="ohrms_overtime.hr_overtime_action"
+                  groups="base.group_user"/>
+        
+        <!-- <menuitem name="Report Overtime" id="report_overtime_menu" 
+                  sequence="0"
+                  parent="report_overtime" 
+                  action="report_overtime_action" 
+                  /> -->
+
+        <!-- Views -->
+        <!-- Form View -->
+        <record id="ohrms_overtime.hr_overtime_form_view" model="ir.ui.view">
+            <field name="name">Time In Lieu</field>
+            <field name="model">hr.overtime</field>
+            <field name="arch" type="xml">
+                <form string="Overtime Request">
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="submit,review_so,review_sm,review_ss,approved"/>
+                        <!-- <button name="submit_to_f" string="Submit"
+                                type="object" class="btn-primary"
+                                attrs="{'invisible': [('state', '!=', 'draft')]}"/> -->
+                        <button name="submit_js" string="Submit" type="object" class="btn-primary" groups="a_role.group_frontliners" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                        <button name="submit_so" string="Submit" type="object" class="btn-primary" groups="a_role.group_station_staff" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                        <button name="submit_so" string="Review" type="object" class="btn-primary" groups="a_role.group_station_staff" attrs="{'invisible': [('state', '!=', 'submit')]}"/>
+                        <button name="submit_sm" string="Submit" type="object" class="btn-primary" groups="a_role.group_station_manager" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                        <button name="approve" string="Approve" type="object" class="btn-primary" groups="a_role.group_station_manager" attrs="{'invisible': [('state', '!=', 'review_so')]}"/>
+                        <button name="approve" string="Approve" type="object" class="btn-primary" groups="a_role.group_station_master" attrs="{'invisible': [('state', '!=', 'review_sm')]}"/>
+                        <button name="reject" string="Refuse" type="object" class="btn-primary" attrs="{'invisible': ['|',('state', 'in', ['draft','approved']),('current_user_boolean', '=', True)]}"/>
+                        <button name="draft" string="Set To Draft" type="object" class="btn-primary" state="submit, review_sm, review_so"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" required="0"
+                                       placeholder="Reference ...."/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name='station_id'/>
+                                <field name='employee_id'
+                                       options="{'no_quick_create': True, 'no_create_edit' : True}" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name='department_id'/>
+                                <field name='job_id'/>
+                                <field name='manager_id'/>
+                                <field name="duration_type" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="current_user_boolean"
+                                       invisible="1"/>
+                            </group>
+                            <group>
+                                <field name='current_user' invisible="1"/>
+                                <field name="contract_id"/>
+                                <field name='attchd_copy'
+                                       filename="attchd_copy_name"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name='type' invisible="1"  attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name='overtime_type_id' groups="hr.group_hr_user"  attrs="{'invisible': [('state', '=', 'draft')], 'required': [('state', '!=', 'draft')]}"/>
+                                <field name="cash_hrs_amount" force_save="1" attrs="{'invisible': ['|','|',('state', '=', 'draft'),('type','!=', 'cash'),('duration_type','!=','hours')]}"/>
+                                <field name="cash_day_amount" force_save="1" attrs="{'invisible': ['|','|',('state', '=', 'draft'),('type','!=', 'cash'),('duration_type','!=','days')]}"/>
+                                <field name="attchd_copy_name" invisible="1"/>
+                                <field name="leave_id"
+                                       attrs="{'invisible': [('leave_id', '=', False)],'readonly': [('state', '!=', 'draft')]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="date_from" required="1"
+                                       class="oe_inline"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="date_to" required="1"
+                                       class="oe_inline"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="days_no_tmp" string="Hours" attrs="{'invisible': [('duration_type', '=', 'days')]}"/>
+                                <field name="days_no_tmp" string="Days" attrs="{'invisible': [('duration_type', '=', 'hours')]}"/>
+                                <!-- <field name="payslip_paid"  readonly="1" attrs="{'invisible': [('type','!=', 'cash')]}" widget="toggle_button" groups="hr.group_hr_manager"/> -->
+                                <field name="days_no" readonly="1"
+                                       invisible="1"/>
+                                <field name="conversion_hour" readonly="1"/>
+                                       
+                            </group>
+                            <group>
+                                <div>
+                                    <separator string="Public Holiday"/>
+                                    <field name="public_holiday"
+                                           force_save="1"/>
+                                </div>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Work Description" name="work_description">
+                                <field name="desc"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            </page>
+                            <page string="Attendance">
+                                <field name="attendance_ids" readonly="1"/>
+                            </page>
+                            <page string="Work Schedule">
+                                <field name="work_schedule" readonly="1"/>
+                            </page>
+                            <page string="Global Leaves">
+                                <field name="global_leaves"/>
+                            </page>
+                        </notebook>
+
+<!--                        <group string="Refuse Reason"-->
+<!--                               attrs="{'invisible': [('cancel_reason', '=', False)]}">-->
+<!--                            <field name="cancel_reason" readonly="1"/>-->
+<!--                        </group>-->
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"
+                               widget="mail_followers"
+                               groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="ohrms_overtime.hr_overtime_tree_view" model="ir.ui.view">
+            <field name="name">Overtime</field>
+            <field name="model">hr.overtime</field>
+            <field name="arch" type="xml">
+                <tree string="Overtime Request">
+                    <field name="employee_id"/>
+                    <field name="overtime_type_id"/>
+                    <field name="station_id" string="Station"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="days_no_tmp"/>
+                    <field name="conversion_hour"/>
+                    <field name="cash_hrs_amount" string="Amount"/>
+                    <field name="type" invisible="1"/>
+                    <!-- <field name="payslip_paid" groups="hr.group_hr_manager" readonly="1" attrs="{'invisible': [('type','!=', 'cash')]}" widget="toggle_button"/> -->
+                    <field name="state" string="State"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_overtime_pivot" model="ir.ui.view">
+            <field name="name">hr.overtime.pivot</field>
+            <field name="model">hr.overtime</field>
+            <field name="arch" type="xml">
+                <pivot string="">
+                    <field name="employee_id" type="row"/>
+                    <field name="date_from" type="col"/>
+                </pivot>
+            </field>
+        </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,171 @@
+<odoo>
+  <data>
+
+      <menuitem name="Scheduling" id="scheduling_menu" 
+                sequence="1" 
+                web_icon="a_penjadwalan_shift,static/description/icon.png" />
+
+        <menuitem name="Resource Load" id="resource_load_menu" 
+                  sequence="0" 
+                  parent="scheduling_menu"
+                  web_icon="a_penjadwalan_shift,static/description/icon.png" />
+
+          <menuitem name="Load Requirement" id="load_requirements_menu" 
+                    sequence="0"
+                    parent="resource_load_menu" 
+                    web_icon="a_penjadwalan_shift,static/description/icon.png"
+                    action="input_load_action" />
+
+          <menuitem name="Load Monitoring" id="load_monitoring_menu" 
+                    sequence="1"
+                    parent="resource_load_menu" 
+                    web_icon="a_penjadwalan_shift,static/description/icon.png"
+                    action="input_monitoring_action" />
+
+
+        <menuitem name="Shift Plan" id="shift_plan_menu" 
+                  sequence="1" 
+                  parent="scheduling_menu"
+                  web_icon="a_penjadwalan_shift,static/description/icon.png" />
+
+          <menuitem name="Shift Group" id="shift_group_menu" 
+                    sequence="0" 
+                    parent="shift_plan_menu"
+                    web_icon="a_penjadwalan_shift,static/description/icon.png" 
+                    action="shift_group_action"/>
+
+          <menuitem name="Shift Schedule" id="shift_schedule_menu" 
+                    sequence="1" 
+                    parent="shift_plan_menu"
+                    web_icon="a_penjadwalan_shift,static/description/icon.png" 
+                    action="shift_shift_action"/>
+
+        <menuitem name="Shift Operation" id="shift_operation_menu"
+                  sequence="2"
+                  parent="scheduling_menu"
+                  web_icon="a_penjadwalan_shift,static/description/icon.png" />
+
+          <menuitem name="Mobile Staff Request" id="shift_shift_operation_menu" 
+                    sequence="0" 
+                    parent="shift_operation_menu"
+                    web_icon="a_penjadwalan_shift,static/description/icon.png" 
+                    action="mobile_load_action"/>
+
+          <menuitem name="Call In Duty" id="shift_adjust_menu" 
+                    sequence="1" 
+                    parent="shift_operation_menu"
+                    web_icon="a_penjadwalan_shift,static/description/icon.png" 
+                    action="adjust_load_action"/>
+
+          <menuitem name="Input Logbook" id="shift_logbook_menu" 
+                    sequence="2" 
+                    parent="shift_operation_menu"
+                    web_icon="a_penjadwalan_shift,static/description/icon.png" 
+                    action="input_logbook_load_action"/>
+
+        <menuitem name="Report" id="shift_report_menu"
+                  sequence="3"
+                  parent="scheduling_menu"
+                  web_icon="a_penjadwalan_shift,static/description/icon.png" />
+
+          <menuitem name="Shift Schedule" id="shift_shift_report_menu" 
+                    sequence="0" 
+                    parent="shift_report_menu"
+                    web_icon="a_penjadwalan_shift,static/description/icon.png" 
+                    action="shift_group_report_action"/>
+
+          <menuitem name="Shift History" id="shift_report_history_menu" 
+                    sequence="1" 
+                    parent="shift_report_menu"
+                    web_icon="a_penjadwalan_shift,static/description/icon.png" 
+                    action="shift_history_action"/>
+
+        <menuitem name="Configuration" id="shift_configuration_menu"
+                  sequence="4"
+                  parent="scheduling_menu"
+                  web_icon="a_penjadwalan_shift,static/description/icon.png" />
+
+          <menuitem name="Shift Type" id="shift_shift_Configuration_menu" 
+                    sequence="0" 
+                    parent="shift_configuration_menu"
+                    web_icon="a_penjadwalan_shift,static/description/icon.png" 
+                    action="shift_type_action"/>
+
+          <menuitem name="Shift Roles" id="shift_roles_configuratiom_menu" 
+                    sequence="1" 
+                    parent="shift_configuration_menu"
+                    web_icon="a_penjadwalan_shift,static/description/icon.png" 
+                    action="shift_role_action"/>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+          <menuitem name="Shift Role" id="shift_role_menu" 
+                    sequence="1"
+                    parent="shift_karyawan_menu" 
+                    web_icon="a_penjadwalan_shift,static/description/icon.png"
+                    action="shift_role_action" />
+
+          <menuitem name="Shift Group" id="shift_group_menu" 
+                    sequence="1"
+                    parent="shift_karyawan_menu" 
+                    web_icon="a_penjadwalan_shift,static/description/icon.png"
+                    action="shift_group_action" />
+
+          <menuitem name="Shift Schedule" id="shift_menu" 
+                    sequence="2"
+                    parent="shift_karyawan_menu" 
+                    web_icon="a_penjadwalan_shift,static/description/icon.png"
+                    action="shift_shift_action" />
+
+          <menuitem name="Submit Request Revision for Mobile Staff" id="shift_mobile_menu" 
+                    sequence="3"
+                    parent="shift_karyawan_menu" 
+                    web_icon="a_penjadwalan_shift,static/description/icon.png"
+                    action="shift_shift_action" />
+
+          <menuitem name="Adjust Staff in Station" id="adjust_staff_menu" 
+                    sequence="3"
+                    parent="shift_karyawan_menu" 
+                    web_icon="a_penjadwalan_shift,static/description/icon.png"
+                    action="shift_shift_action" />
+
+          <menuitem name="Input Logbook" id="input_log_menu" 
+                    sequence="3"
+                    parent="shift_karyawan_menu" 
+                    web_icon="a_penjadwalan_shift,static/description/icon.png"
+                    action="shift_shift_action" />
+
+          <menuitem name="Report Jadwal Shift" id="report_shift_menu" 
+                    sequence="3"
+                    parent="shift_karyawan_menu" 
+                    web_icon="a_penjadwalan_shift,static/description/icon.png"
+                    action="shift_shift_action" />
+
+          <menuitem name="History Pengajuan Shift" id="history_shift_menu" 
+                    sequence="3"
+                    parent="shift_karyawan_menu" 
+                    web_icon="a_penjadwalan_shift,static/description/icon.png"
+                    action="shift_shift_action" /> -->
+
+
+  </data>
+</odoo>

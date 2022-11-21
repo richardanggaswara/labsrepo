@@ -1,0 +1,132 @@
+<odoo>
+  <data>
+      <menuitem name="Data Master" id="data_master_menu_up" 
+                sequence="0" 
+                web_icon="a_data_master,static/description/icon.png" />
+        <menuitem name="Users &amp; Companies" id="company_menu" 
+                  sequence="99" 
+                  parent="data_master_menu_up" 
+                  web_icon="a_data_master,static/description/icon.png" />
+          <menuitem name="Users" id="users_menu" 
+                    sequence="0"
+                    parent="company_menu" 
+                    web_icon="a_data_master,static/description/icon.png"
+                    action="base.action_res_users"
+                    />
+          <menuitem name="Companies" id="companies_menu" 
+                    sequence="1"
+                    parent="company_menu" 
+                    web_icon="a_data_master,static/description/icon.png"
+                    action="base.action_res_company_form"
+                    />
+
+
+        <menuitem name="Data Master" id="data_master_menu" 
+                  sequence="1" 
+                  parent="data_master_menu_up" 
+                  web_icon="a_data_master,static/description/icon.png" />
+
+          <menuitem name="Data Station" id="data_station_menu" 
+                    sequence="0"
+                    parent="data_master_menu" 
+                    web_icon="a_data_master,static/description/icon.png"
+                    action="a_penjadwalan_shift.master_station_load_action"
+                    />
+          <menuitem name="Division &amp; Department" id="data_division_menu" 
+                    sequence="1"
+                    parent="data_master_menu" 
+                    web_icon="a_data_master,static/description/icon.png"
+                    action="hr.open_module_tree_department"
+                    />
+          <menuitem name="Position" id="position_menu" 
+                    sequence="2"
+                    parent="data_master_menu" 
+                    web_icon="a_data_master,static/description/icon.png"
+                    action="hr.action_hr_job"
+                   />
+          <!-- <menuitem name="Shift" id="shift_menu" 
+                    sequence="0"
+                    parent="data_master_menu" 
+                    web_icon="a_data_master,static/description/icon.png"
+                    action="a_penjadwalan_shift.shift_group_action"
+                   /> -->
+          <menuitem name="Holiday" id="holiday_menu" 
+                    sequence="3"
+                    parent="data_master_menu" 
+                    web_icon="a_data_master,static/description/icon.png"
+                    action="hr_holidays_public.open_holidays_public_view"
+                   />
+          <!-- <menuitem name="Log Book" id="log_book_menu" 
+                    sequence="0"
+                    parent="data_master_menu" 
+                    web_icon="a_data_master,static/description/icon.png"
+                    action="a_penjadwalan_shift.input_load_action"
+                   /> -->
+          <menuitem name="Range Evaluation" id="evaluatation_menu" 
+                    sequence="4"
+                    parent="data_master_menu" 
+                    web_icon="a_data_master,static/description/icon.png"
+                    action="hr_disciplinary_tracking.action_disciplinary_category_view"
+                   />
+          <menuitem name="Training Topic" id="training_menu" 
+                    sequence="5"
+                    parent="data_master_menu" 
+                    web_icon="a_data_master,static/description/icon.png"
+                    action="a_training.training_topic_action"
+                   />
+
+          <record id="open_view_employee_organic_my" model="ir.actions.act_window">
+                <field name="name">Personel Organic</field>
+                <field name="res_model">hr.employee</field>
+                <field name="view_mode">kanban,tree,form,activity</field>
+                <field name="domain">[('company_id','=',1)]</field>
+                <field name="context">{}</field>
+                <field name="view_id" eval="False"/>
+                <field name="help" type="html">
+                    <p class="o_view_nocontent_smiling_face">
+                    Add a new employee
+                    </p><p>
+                    With just a quick glance on the Odoo employee screen, you
+                    can easily find all the information you need for each person;
+                    contact data, job position, availability, etc.
+                    </p>
+                </field>
+          </record>
+
+          <record id="open_view_employee_nonorganic_my" model="ir.actions.act_window">
+                <field name="name">Personel Non Organic</field>
+                <field name="res_model">hr.employee</field>
+                <field name="view_mode">kanban,tree,form,activity</field>
+                <field name="domain">[('company_id','!=',1)]</field>
+                <field name="context">{}</field>
+                <field name="view_id" eval="False"/>
+                <field name="help" type="html">
+                    <p class="o_view_nocontent_smiling_face">
+                    Add a new employee
+                    </p><p>
+                    With just a quick glance on the Odoo employee screen, you
+                    can easily find all the information you need for each person;
+                    contact data, job position, availability, etc.
+                    </p>
+                </field>
+          </record>
+
+
+          <menuitem name="Personel - Organic" id="organic_menu" 
+                    sequence="6"
+                    parent="data_master_menu" 
+                    web_icon="a_data_master,static/description/icon.png"
+                    action="open_view_employee_organic_my"
+                   />
+          <menuitem name="Personel - Non Organic" id="non_organic_menu" 
+                    sequence="7"
+                    parent="data_master_menu" 
+                    web_icon="a_data_master,static/description/icon.png"
+                    action="open_view_employee_nonorganic_my"
+                   />
+
+        
+
+
+  </data>
+</odoo>

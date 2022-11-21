@@ -1,0 +1,1030 @@
+<odoo>
+  <data>
+
+    <record id="man_hour_form" model="ir.ui.view">
+      <field name="name">man.hour.form</field>
+      <field name="model">man.hour</field>
+      <field name="arch" type="xml">
+        <form string="Man Hours">
+            <field name="name" string="Station"/>
+            <field name="lima"/>
+            <field name="enam"/>
+            <field name="tujuh"/>
+            <field name="delapan"/>
+            <field name="sembilan"/>
+            <field name="sepuluh"/>
+            <field name="sebelas"/>
+            <field name="duabelas"/>
+            <field name="tigabelas"/>
+            <field name="empatbelas"/>
+            <field name="limabelas"/>
+            <field name="enambelas"/>
+            <field name="tujuhbelas"/>
+            <field name="delapanbelas"/>
+            <field name="sembilanbelas"/>
+            <field name="duapuluh"/>
+            <field name="duasatu"/>
+            <field name="duadua"/>
+            <field name="duatiga"/>
+            <field name="total"  string="Total"/>
+
+        </form>
+      </field>
+    </record>
+
+    <record id="input_monitoruing_form" model="ir.ui.view">
+      <field name="name">input.monitoring.form</field>
+      <field name="model">input.monitoring</field>
+      <field name="arch" type="xml">
+        <form string="Load Monitoring">
+          <header>
+          </header>
+          <sheet>
+              <group>
+                <field name="name" required="1"/>
+                <label for="tanggal_mulai"/>
+                <div>
+                    <field name="tanggal_mulai" class="oe_inline"/> To
+                    <field name="tanggal_selesai" nolabel="1" class="oe_inline"/>
+                </div>
+                <field name="load_date" string="Load Date" invisible="1"/>
+              </group>  
+               
+              <strong><center>Load Date</center></strong>
+              <notebook>
+                <page string="1" attrs="{'invisible': [('load_date', '&lt;', 1)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_1">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="2" attrs="{'invisible': [('load_date', '&lt;', 2)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_2">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="3" attrs="{'invisible': [('load_date', '&lt;', 3)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_3">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="4" attrs="{'invisible': [('load_date', '&lt;', 4)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_4">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="5" attrs="{'invisible': [('load_date', '&lt;', 5)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_5">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="6" attrs="{'invisible': [('load_date', '&lt;', 6)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_6">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="7" attrs="{'invisible': [('load_date', '&lt;', 7)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_7">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="8" attrs="{'invisible': [('load_date', '&lt;', 8)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_8">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="9" attrs="{'invisible': [('load_date', '&lt;', 9)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_9">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="10" attrs="{'invisible': [('load_date', '&lt;', 10)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_10">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="11" attrs="{'invisible': [('load_date', '&lt;', 11)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_11">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="12" attrs="{'invisible': [('load_date', '&lt;', 12)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_12">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="13" attrs="{'invisible': [('load_date', '&lt;', 13)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_13">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="14" attrs="{'invisible': [('load_date', '&lt;', 14)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_14">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="15" attrs="{'invisible': [('load_date', '&lt;', 15)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_15">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="16" attrs="{'invisible': [('load_date', '&lt;', 16)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_16">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="17" attrs="{'invisible': [('load_date', '&lt;', 17)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_17">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="18" attrs="{'invisible': [('load_date', '&lt;', 18)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_18">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="19" attrs="{'invisible': [('load_date', '&lt;', 19)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_19">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="20" attrs="{'invisible': [('load_date', '&lt;', 20)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_20">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="21" attrs="{'invisible': [('load_date', '&lt;', 21)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_21">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="22" attrs="{'invisible': [('load_date', '&lt;', 22)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_22">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="23" attrs="{'invisible': [('load_date', '&lt;', 23)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_23">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="24" attrs="{'invisible': [('load_date', '&lt;', 24)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_24">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="25" attrs="{'invisible': [('load_date', '&lt;', 25)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_25">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="26" attrs="{'invisible': [('load_date', '&lt;', 26)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_26">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="27" attrs="{'invisible': [('load_date', '&lt;', 27)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_27">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="28" attrs="{'invisible': [('load_date', '&lt;', 28)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_28">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="29" attrs="{'invisible': [('load_date', '&lt;', 29)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_29">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="30" attrs="{'invisible': [('load_date', '&lt;', 30)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_30">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+                <page string="31" attrs="{'invisible': [('load_date', '&lt;', 31)]}">
+                  <strong><center>Load Hour</center></strong>
+                  <field name="tanggal_31">
+                    <tree editable="bottom" delete="0" create="0" edit="0">
+                        <field name="name" string="Station"/>
+                        <field name="empat"/>
+                        <field name="lima"/>
+                        <field name="enam"/>
+                        <field name="tujuh"/>
+                        <field name="delapan"/>
+                        <field name="sembilan"/>
+                        <field name="sepuluh"/>
+                        <field name="sebelas"/>
+                        <field name="duabelas"/>
+                        <field name="tigabelas"/>
+                        <field name="empatbelas"/>
+                        <field name="limabelas"/>
+                        <field name="enambelas"/>
+                        <field name="tujuhbelas"/>
+                        <field name="delapanbelas"/>
+                        <field name="sembilanbelas"/>
+                        <field name="duapuluh"/>
+                        <field name="duasatu"/>
+                        <field name="duadua"/>
+                        <field name="duatiga"/>
+                        <field name="total" sum="Total Manpower" string="Total"/>
+
+                    </tree> 
+                  </field> 
+                </page>
+              </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="input_monitoring_tree" model="ir.ui.view">
+      <field name="name">input.monitoring.tree</field>
+      <field name="model">input.monitoring</field>
+      <field name="arch" type="xml">
+        <tree string="Load Monitoring">
+          <field name="name"/>
+          <field name="tanggal_mulai"/>
+          <field name="tanggal_selesai"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record id="view_module_pivot_monitoring" model="ir.ui.view">
+            <field name="name">input.monitoring.pivot</field>
+            <field name="model">input.monitoring</field>
+            <field name="arch" type="xml">
+                <pivot string="Load Monitoring"> 
+                </pivot>
+       </field>
+    </record>
+
+
+
+    <record id="input_monitoring_action" model="ir.actions.act_window">
+      <field name="name">Load Monitoring</field>
+      <field name="res_model">input.monitoring</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,pivot,form</field>
+    </record>
+
+
+
+
+
+
+
+
+  </data>
+</odoo>

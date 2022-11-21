@@ -1,0 +1,62 @@
+<odoo>
+  <data>
+
+    <record id="input_logbook_form" model="ir.ui.view">
+      <field name="name">input.logbook.form</field>
+      <field name="model">input.logbook</field>
+      <field name="arch" type="xml">
+        <form string="Input Logbook">
+          <header>
+          </header>
+          <sheet>
+              <group>
+                <field name="name"/>
+                <field name="act"/>
+                <field name="states" required="1"/>
+                <field name="dept_id" />
+                <field name="sm_id"/>
+                <field name="shift" required="1"/>
+                <field name="notes"/>
+                <field name="stat_handover" required="1"/>
+                <field name="closed_by"/>
+                <field name="link_form"/>
+              </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="input_logbook_load_tree" model="ir.ui.view">
+      <field name="name">input.logbook.tree</field>
+      <field name="model">input.logbook</field>
+      <field name="arch" type="xml">
+        <tree string="Input Logbook">
+                <field name="name"/>
+                <field name="act"/>
+                <field name="states"/>
+                <field name="dept_id"/>
+                <field name="sm_id"/>
+                <field name="shift"/>
+                <field name="notes"/>
+                <field name="link_form"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record id="input_logbook_load_action" model="ir.actions.act_window">
+      <field name="name">Input Logbook</field>
+      <field name="res_model">input.logbook</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,pivot,form</field>
+    </record>
+
+
+
+
+
+
+
+
+  </data>
+</odoo>

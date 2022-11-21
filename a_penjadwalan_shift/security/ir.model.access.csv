@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_shift_shift,shift.shift,model_shift_shift,,1,1,1,1
+access_shift_role,shift.role,model_shift_role,,1,1,1,1
+access_shift_group,shift.group,model_shift_group,,1,1,1,1
+access_shift_type,shift.type,model_shift_type,,1,1,1,1
+access_shift_mode,shift.mode,model_shift_mode,,1,1,1,1
+access_input_load,input.load,model_input_load,,1,1,1,1
+access_input_logbook,input.logbook,model_input_logbook,,1,1,1,1
+access_input_monitoring,input.monitoring,model_input_monitoring,,1,1,1,1
+access_man_power,man.power,model_man_power,,1,1,1,1
+access_man_hour,man.hour,model_man_hour,,1,1,1,1
+access_master_station,master.station,model_master_station,,1,1,1,1
+access_mobile_staff,mobile.staff,model_mobile_staff,,1,1,1,1
+access_adjust_staff,adjust.staff,model_adjust_staff,,1,1,1,1
+access_available_resource,available.resource,model_available_resource,,1,1,1,1

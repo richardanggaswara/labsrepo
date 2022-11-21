@@ -1,0 +1,382 @@
+<odoo>
+  <data noupdate="1">
+    <!-- <record id="shift_type" model="shift.type">
+        <field name="name">Shift 1</field>
+    </record>
+    <record id="shift_mode" model="shift.mode">
+        <field name="name">By Employee</field>
+    </record>
+  </data>
+  <data> -->
+
+    <record id="shift_role_form" model="ir.ui.view">
+      <field name="name">shift.role.form</field>
+      <field name="model">shift.role</field>
+      <field name="arch" type="xml">
+        <form string="Shift Role">
+          <group>
+            <group>
+              <field name="name"/>
+              <field name="desc"/>
+            </group>
+            <group>
+
+            </group>
+
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+    <record id="shift_role_tree" model="ir.ui.view">
+      <field name="name">shift.role.tree</field>
+      <field name="model">shift.role</field>
+      <field name="arch" type="xml">
+        <tree string="Shift Role">
+          <field name="name"/>
+          <field name="desc"/>
+        </tree>
+      </field>
+    </record>
+
+
+
+    <record id="shift_role_action" model="ir.actions.act_window">
+      <field name="name">Shift Role</field>
+      <field name="res_model">shift.role</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="shift_group_form" model="ir.ui.view">
+      <field name="name">shift.group.form</field>
+      <field name="model">shift.group</field>
+      <field name="arch" type="xml">
+        <form string="Shift Group">
+          <header>
+            <button name="approve" type="object" class="btn btn-info" string="Approve" attrs="{'invisible': [('states', '!=', 'toapprove')]}"/>
+            <button name="refuse" type="object" class="btn btn-info" string="Refuse" attrs="{'invisible': [('states', '!=', 'toapprove')]}"/>
+            <button name="reset" type="object" class="btn" string="Reset to Approve" attrs="{'invisible': ['|',('states', 'not in', ['approved','refuse'])]}"/>
+            <field name="states" widget="statusbar" statusbar_visible="toapprove,approved"/>
+          </header>
+          <div class="oe_button_box" name="button_box" groups="base.group_user">
+            <button name="%(a_penjadwalan_shift.shift_shift_action)d" type="action" class="oe_stat_button" icon="fa-users">
+              <field name="shift_ids" widget="statinfo" string="Shifts"/>
+            </button>
+          </div>
+          <group>
+            <group>
+
+              <field name="code"/>
+              <field name="name"/>
+              <label for="period_start"/>
+              <div>
+                <field name="period_start" class="oe_inline"/>
+ To
+                <field name="period_end" nolabel="1" class="oe_inline"/>
+              </div>
+              <field name="desc"/>
+            </group>
+            <group>
+              <field name="station"/>
+              <field name="department"/>
+              <field name="responsible"/>
+              <field name="approver"/>
+            </group>
+
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+    <record id="shift_group_tree" model="ir.ui.view">
+      <field name="name">shift.group.tree</field>
+      <field name="model">shift.group</field>
+      <field name="arch" type="xml">
+        <tree string="Shift Group">
+          <field name="code"/>
+          <field name="name"/>
+          <field name="desc"/>
+          <field name="station"/>
+          <field name="department"/>
+          <field name="responsible"/>
+          <field name="approver"/>
+          <field name="period_start"/>
+          <field name="period_end"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- model.name kanban view -->
+    <record id="shift_group_view_kanban" model="ir.ui.view">
+      <field name="name">shift.group.view.kanban</field>
+      <field name="model">shift.group</field>
+      <field name="arch" type="xml">
+        <kanban class="o_event_kanban_view">
+          <field name="code"/>
+          <field name="name"/>
+          <field name="desc"/>
+          <field name="station"/>
+          <field name="department"/>
+          <field name="responsible"/>
+          <field name="approver"/>
+          <field name="period_start"/>
+          <field name="period_end"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class=" oe_kanban_card oe_kanban_global_click">
+                <div class="o_dropdown_kanban dropdown">
+
+                  <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" data-display="static" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                    <span class="fa fa-ellipsis-v"/>
+                  </a>
+                  <div class="dropdown-menu" role="menu">
+                    <t t-if="widget.deletable">
+                      <a role="menuitem" type="delete" class="dropdown-item">Delete</a>
+                    </t>
+                    <ul class="oe_kanban_colorpicker" data-field="color" role="menu"/>
+                  </div>
+                </div>
+                <!-- <div class="o_event_left">
+                          <div class="o_day"><t t-esc="record.date_begin.raw_value.getDate()"/></div>
+                          <div>
+                              <t t-esc="moment(record.date_begin.raw_value).format('MMM')"/>
+                              <t t-esc="record.date_begin.raw_value.getFullYear()"/>
+                          </div>
+                          <div><t t-esc="moment(record.date_begin.raw_value).format('LT')"/></div>
+                      </div> -->
+                <div class="o_event_right">
+                  <h4 class="o_kanban_record_title">
+                    <field name="name"/>
+                  </h4>
+                  <div>
+                    <t t-if="record.station.name">
+                      <b class="o_kanban_record_subtitle">
+                        <field name="station"/>
+                      </b>
+                      <br/>
+                    </t>
+                    <!-- <b><i class="fa fa-clock-o"/>
+                              To</b> <t t-esc="moment(record.date_end.raw_value).format('lll')"/> -->
+                  </div>
+                  <!-- <h4>
+                              <a name="368" type="action">
+                                  <t t-esc="record.seats_expected.raw_value"/> Expected attendees
+                              </a>
+                              <t t-if="(record.seats_reserved.raw_value + record.seats_used.raw_value) &gt; 0 "><br/>
+                                  <a name="369" type="action">
+                                      <t t-esc="record.seats_reserved.raw_value + record.seats_used.raw_value"/> Confirmed attendees
+                                  </a>
+                              </t>
+                          </h4> -->
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+
+      </field>
+    </record>
+
+    <record id="shift_group_action" model="ir.actions.act_window">
+      <field name="name">Shift Group</field>
+      <field name="res_model">shift.group</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <record id="shift_group_pivot" model="ir.ui.view">
+      <field name="name">shift.group.pivot</field>
+      <field name="model">shift.group</field>
+      <field name="arch" type="xml">
+        <pivot string="Shift Group">
+        </pivot>
+      </field>
+    </record>
+
+    <record id="shift_group_report_action" model="ir.actions.act_window">
+      <field name="name">Shift Group</field>
+      <field name="res_model">shift.group</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">pivot</field>
+    </record>
+
+
+    <record id="shift_type_form" model="ir.ui.view">
+      <field name="name">shift.type.form</field>
+      <field name="model">shift.type</field>
+      <field name="arch" type="xml">
+        <form string="Shift Type">
+          <group>
+            <field name="name"/>
+            <field name="code" required="1"/>
+            <field name="desc"/>
+            <label for="tanggal_mulai"/>
+            <div>
+              <field name="tanggal_mulai" required="1" class="oe_inline" widget="float_time"/>
+ To
+              <field name="tanggal_selesai" nolabel="1" required="1" class="oe_inline" widget="float_time"/>
+            </div>
+            <field name="color" widget="color"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="shift_form" model="ir.ui.view">
+      <field name="name">shift.shift.form</field>
+      <field name="model">shift.shift</field>
+      <field name="arch" type="xml">
+        <form string="Shift">
+          <header>
+            <button name="approve" type="object" class="btn btn-info" string="Approve" groups="a_role.group_station_master" attrs="{'invisible': [('states', '!=', 'toapprove')]}"/>
+            <button name="refuse" type="object" class="btn btn-info" string="Refuse" attrs="{'invisible': [('states', '=', 'toapprove')]}"/>
+            <button name="reset" type="object" class="btn" string="Reset to Approve" groups="a_role.group_station_master" attrs="{'invisible': ['|',('states', 'not in', ['approved','refuse'])]}"/>
+            <field name="states" widget="statusbar" statusbar_visible="toapprove,approved"/>
+          </header>
+          <sheet>
+            <group>
+              <group>
+                <field name="shift_group_id" required="1"/>
+                <field name="shift_type_id"/>
+
+                <!-- <label for="duration"/>
+                <div>
+                    <field name="duration" class="oe_inline"/>
+
+                    <field name="type_shift" nolabel="1" class="oe_inline"/>
+                </div> -->
+                <label for="tanggal_mulai"/>
+                <div>
+                  <field name="tanggal_mulai" class="oe_inline" t-options="{'format': 'dd / MM / yyyy HH / mm'}"/>
+ To
+                  <field name="tanggal_selesai" nolabel="1" class="oe_inline" t-options="{'format': 'dd / MM / yyyy HH / mm'}"/>
+                </div>
+                <field name="desc"/>
+              </group>
+              <group>
+                <!-- <field name="mode_id" required="0" invisible="1"/> -->
+                <field name="employee_id"/>
+                <field name="department_id" readonly="0"/>
+                <!-- <field name="flag"/> -->
+                <field name="station"/>
+                <field name="job_position" readonly="0"/>
+                <field name="rules" readonly="0"/>
+              </group>
+            </group>
+            <group>
+              <field name="comment"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="shift_shift_tree" model="ir.ui.view">
+      <field name="name">shift.shift.tree</field>
+      <field name="model">shift.shift</field>
+      <field name="arch" type="xml">
+        <tree string="Shift">
+          <field name="station"/>
+          <field name="shift_group_id"/>
+          <field name="tanggal_mulai" string="Date Start"/>
+          <field name="tanggal_selesai" string="Date End"/>
+          <field name="shift_type_id"/>
+          <field name="rules"/>
+          <field name="states"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record id="shift_shift_calendar" model="ir.ui.view">
+      <field name="name">shift.shift.calendar</field>
+      <field name="model">shift.shift</field>
+      <field name="arch" type="xml">
+        <calendar string="Shift" date_start="tanggal_mulai" date_stop="tanggal_selesai" color="employee_id" mode="month" quick_add="False">
+          <field name="employee_id"/>
+          <field name="shift_type_id"/>
+          <!-- <field name="tanggal_mulai"/> -->
+          <!-- <field name="tanggal_selesai"/> -->
+        </calendar>
+      </field>
+    </record>
+
+
+    <record id="shift_shift_timeline" model="ir.ui.view">
+      <field name="model">shift.shift</field>
+      <field name="type">timeline</field>
+      <field name="arch" type="xml">
+        <timeline string="Shift" default_group_by="employee_id" event_open_popup="true" zoomKey="ctrlKey" colors="#5379d4:states == 'toapprove';#383836:states == 'refuse';#57803d:states=='approved';">
+          <field name="employee_id"/>
+          <field name="shift_type_id"/>
+          <field name="states"/>
+          <field name="comment"/>
+          <field name="tanggal_mulai" />
+          <field name="tanggal_selesai" />
+          <templates>
+            <div t-name="timeline-item">
+              <!-- <img t-if="record.employee_id" t-attf-src="/web/image/hr.employee/#{record.employee_id[0]}/image/24x24" t-att-title="record.employee_id[1]" width="24" height="24" class="mr8"/> -->
+              <!-- <span name="employee_id">
+                                <t t-esc="record.employee_id[1]"/>
+                            </span> -->
+              <small name="shift_type_id" class="text-muted ml4">
+
+                <t t-esc="record.shift_type_id[1]"/>
+                <!-- <t t-esc="record.tanggal_mulai"/> to  -->
+                <!-- <t t-esc="record.tanggal_selesai"/> -->
+                <!-- <t t-if="record.comment">
+                                  <br/>
+                                  <t t-esc="record.comment"/>
+                                </t> -->
+
+              </small>
+            </div>
+          </templates>
+        </timeline>
+      </field>
+    </record>
+
+    <record id="view_module_pivot_" model="ir.ui.view">
+      <field name="name">shift.shift.pivot</field>
+      <field name="model">shift.shift</field>
+      <field name="arch" type="xml">
+        <pivot string="Shift">
+          <field name ="employee_id" type="col"/>
+          <field name="shift_type_id" type="row" />
+        </pivot>
+      </field>
+    </record>
+
+    <record id="shift_shift_action" model="ir.actions.act_window">
+      <field name="name">Shift</field>
+      <field name="res_model">shift.shift</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">calendar,timeline,pivot,tree,form</field>
+    </record>
+
+    <record id="shift_history_action" model="ir.actions.act_window">
+      <field name="name">Shift</field>
+      <field name="res_model">shift.shift</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">timeline</field>
+    </record>
+
+    <record id="shift_type_action" model="ir.actions.act_window">
+      <field name="name">Shift Type</field>
+      <field name="res_model">shift.type</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="shift_role_action" model="ir.actions.act_window">
+      <field name="name">Shift Role</field>
+      <field name="res_model">shift.role</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>

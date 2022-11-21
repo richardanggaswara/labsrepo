@@ -1,0 +1,51 @@
+<odoo>
+  <data>
+
+      <menuitem name="Evaluation" id="evaluation_menua" 
+                sequence="3" 
+                web_icon="a_apraisal,static/description/icon.png" />
+
+        <menuitem name="Disciplinary Action" id="evaluation_menu_" 
+                  sequence="1"
+                  parent="evaluation_menua" 
+                  web_icon="a_apraisal,static/description/icon.png"
+                  action="hr_disciplinary_tracking.action_disciplinary_action"
+                   />
+   
+
+          <menuitem id="disciplinary_action_create_action" action="hr_disciplinary_tracking.action_disciplinary_action"  groups="hr.group_hr_manager" name="Disciplinary Action" parent="evaluation_menu_"
+                      sequence="1"/>
+          <menuitem id="disciplinary_action_view_action" action="hr_disciplinary_tracking.action_disciplinary_action_view" name="Action Details" parent="evaluation_menu_"
+                    sequence="2"/>
+
+
+        <menuitem name="Report" id="evaluation_menu_report" 
+                  sequence="2"
+                  parent="evaluation_menua" 
+                  web_icon="a_apraisal,static/description/icon.png"
+                  action="hr_disciplinary_tracking.action_disciplinary_action"
+                   />
+   
+          <menuitem id="disciplinary_action_create" action="action_report_peremployee"  groups="hr.group_hr_manager" name="Penilaian per Employee perbulan" parent="evaluation_menu_report"
+                      sequence="1"/>
+          <menuitem id="disciplinary_action_view" action="hr_disciplinary_tracking.action_disciplinary_action_view" name="Penilaian per All Employee perbulan" parent="evaluation_menu_report"
+                    sequence="2"/>
+
+
+        <menuitem name="Configuration" id="evaluation_menu_configutation" 
+                  sequence="3"
+                  parent="evaluation_menua" 
+                  web_icon="a_apraisal,static/description/icon.png"
+                  action="hr_disciplinary_tracking.action_disciplinary_action"
+                   />
+   
+          <menuitem id="disciplinary_action_create_category" action="hr_disciplinary_tracking.action_disciplinary_action"  groups="hr.group_hr_manager" name="Disciplinary Category" parent="evaluation_menu_configutation"
+                      sequence="1"/>
+          <menuitem id="disciplinary_action_view_category" action="hr_disciplinary_tracking.action_disciplinary_action_view" name="Action Category" parent="evaluation_menu_configutation"
+                    sequence="2"/>
+
+          <menuitem id="disciplinary_action_create" action="action_report_peremployee"  groups="hr.group_hr_manager" name="Penilaian per Employee perbulan" parent="a_overtime.report_overtime"
+                      sequence="1"/>
+
+  </data>
+</odoo>

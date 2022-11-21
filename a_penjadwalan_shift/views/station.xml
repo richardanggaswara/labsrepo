@@ -1,0 +1,64 @@
+<odoo>
+  <data>
+
+    <record id="master_station_form" model="ir.ui.view">
+      <field name="name">master.station.form</field>
+      <field name="model">master.station</field>
+      <field name="arch" type="xml">
+        <form string="Station">
+          <header>
+          </header>
+          <sheet>
+              <group>
+                <field name="sequence" required="1"/>
+                <field name="name" required="1"/>
+                <field name="code" required="1"/>
+                <field name="departement" required="1"/>
+                <field name="master"/>
+              </group>   
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="master_station_load_tree" model="ir.ui.view">
+      <field name="name">master.station.tree</field>
+      <field name="model">master.station</field>
+      <field name="arch" type="xml">
+        <tree string="Station">
+            <!-- <field name="sequence" widget="handle"/> -->
+            <field name="sequence"/>
+            <field name="name" required="1"/>
+            <field name="code" required="1"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record id="view_module_pivot_" model="ir.ui.view">
+            <field name="name">master.station.pivot</field>
+            <field name="model">master.station</field>
+            <field name="arch" type="xml">
+                <pivot string="Station"> 
+                </pivot>
+       </field>
+    </record>
+
+
+
+    <record id="master_station_load_action" model="ir.actions.act_window">
+      <field name="name">Station</field>
+      <field name="res_model">master.station</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,pivot,form</field>
+    </record>
+
+
+
+
+
+
+
+
+  </data>
+</odoo>
