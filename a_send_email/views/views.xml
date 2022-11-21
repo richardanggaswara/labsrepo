@@ -1,0 +1,211 @@
+<odoo>
+	<data>
+
+		<record model="mail.template" id="load_requirment_notification">
+			<field name="name">Notification</field>
+			<field name="email_from">gaas@jakartamrt.co.id</field>
+			<field name="email_to">${ctx.get('email')}</field>
+			<field name="subject">Update Load requirements ${ctx.get('name')}</field>
+			<field name="model_id" ref="a_send_email.model_send_email_notification" />
+			<field name="auto_delete" eval="False" />
+			<field name="body_html">
+				<![CDATA[ 
+					<p>
+						[THIS IS AUTOMATIC MESSAGING SYSTEM. NO REPLY]
+					</p>
+					<div>
+						Dear User,
+						<br/>
+						<br/>
+						Load requirements has been updated.
+						<br/>
+						Please custom the shift scheduling refer to this change
+						<br/>
+						<br/>
+						To change the shift schedule please click this link
+						<br/>
+						<a href="${ctx.get('url')}">${ctx.get('url')}</a>
+					<div/>
+					<p>
+						Thanks.
+					</p>
+				]]>
+			</field>
+		</record>
+
+		<record model="mail.template" id="load_monitoring_notification">
+			<field name="name">Notification</field>
+			<field name="email_from">gaas@jakartamrt.co.id</field>
+			<field name="email_to">${ctx.get('email')}</field>
+			<field name="subject">Update Load Monitoring ${ctx.get('name')}</field>
+			<field name="model_id" ref="a_send_email.model_send_email_notification" />
+			<field name="auto_delete" eval="False" />
+			<field name="body_html">
+				<![CDATA[ 
+					<p>
+						[THIS IS AUTOMATIC MESSAGING SYSTEM. NO REPLY]
+					</p>
+					<div>
+						Dear User,
+						<br/>
+						<br/>
+						Load monitoring has been updated.
+						<br/>
+						Please custom the shift scheduling refer to this change
+						<br/>
+						<br/>
+						To change the shift schedule please click this link
+						<br/>
+						<a href="${ctx.get('url')}">${ctx.get('url')}</a>
+					<div/>
+					<p>
+						Thanks.
+					</p>
+				]]>
+			</field>
+		</record>
+
+		<record model="mail.template" id="reminder_notification">
+			<field name="name">Notification</field>
+			<field name="email_from">gaas@jakartamrt.co.id</field>
+			<field name="email_to">${ctx.get('email')}</field>
+			<field name="subject">Request Approval ${ctx.get('name')}</field>
+			<field name="model_id" ref="a_send_email.model_send_email_notification" />
+			<field name="auto_delete" eval="False" />
+			<field name="body_html">
+				<![CDATA[ 
+					<p>
+						[THIS IS AUTOMATIC MESSAGING SYSTEM. NO REPLY]
+					</p>
+					<div>
+						Dear User,
+						<br/>
+						<br/>
+						This is outstanding transaction that need your action to ${ctx.get('status')}.
+						<br/>
+						<a href="${ctx.get('url')}">Click here to check the document</a>
+					<div/>
+					<p>
+						Thanks.
+					</p>
+				]]>
+			</field>
+		</record>
+
+		<record model="mail.template" id="template_assign_project">
+			<field name="name">Notification</field>
+			<field name="email_from">gaas@jakartamrt.co.id</field>
+			<field name="email_to">${ctx.get('email')}</field>
+			<field name="subject">Project Assigned</field>
+			<field name="model_id" ref="a_send_email.model_send_email_notification" />
+			<field name="auto_delete" eval="False" />
+			<field name="body_html">
+				<![CDATA[ 
+					<p>
+						[THIS IS AUTOMATIC MESSAGING SYSTEM. NO REPLY]
+					</p>
+					<div>
+						Dear User,
+						<br/>
+						<br/>
+						You have assigment to involve project ${ctx.get('project'), to view the detail task please visit to https://erp.falahtech.com.
+						<br/>
+						<br/>
+						The project leader is ${ctx.get('pl').
+						<br/>
+						<br/>
+						If you have any question, please contact the project leader.
+					<div/>
+					<p>
+						Thanks.
+					</p>
+				]]>
+			</field>
+		</record>
+
+		<record model="mail.template" id="template_contract_project">
+			<field name="name">Notification</field>
+			<field name="email_from">gaas@jakartamrt.co.id</field>
+			<field name="email_to">${ctx.get('email')}</field>
+			<field name="subject">Contract Project</field>
+			<field name="model_id" ref="a_send_email.model_send_email_notification" />
+			<field name="auto_delete" eval="False" />
+			<field name="body_html">
+				<![CDATA[ 
+					<p>
+						[THIS IS AUTOMATIC MESSAGING SYSTEM. NO REPLY]
+					</p>
+					<div>
+						Dear User,
+						<br/>
+						<br/>
+						Our Company have contract of Project ${ctx.get('judul_kontrak')} -  ${ctx.get('nama_kontrak')} with ${ctx.get('customer')} in period ${ctx.get('date_from')} - ${ctx.get('date_to')}<br/>
+						<br/>
+						<br/>
+						To view the detail contract, please visit to <a href="https://erp.falahtech.com">https://erp.falahtech.com</a>
+					<div/>
+					<p>
+						Thanks.
+					</p>
+				]]>
+			</field>
+		</record>
+
+		<record model="mail.template" id="template_bast">
+			<field name="name">Notification</field>
+			<field name="email_from">gaas@jakartamrt.co.id</field>
+			<field name="email_to">${ctx.get('email')}</field>
+			<field name="subject">Finished BAST</field>
+			<field name="model_id" ref="a_send_email.model_send_email_notification" />
+			<field name="auto_delete" eval="False" />
+			<field name="body_html">
+				<![CDATA[ 
+					<p>
+						[THIS IS AUTOMATIC MESSAGING SYSTEM. NO REPLY]
+					</p>
+					<div>
+						Dear User,
+						<br/>
+						<br/>
+						Project ${ctx.get('judul_kontrak')} - ${ctx.get('no_kontrak')} with ${ctx.get('pihak_pertama')} have finished (BAST) on ${ctx.get('date')}
+						<br/>
+						<br/>
+						To view the detail BAST, please visit to <a href="https://erp.falahtech.com">https://erp.falahtech.com</a>
+					<div/>
+					<p>
+						Thanks.
+					</p>
+				]]>
+			</field>
+		</record>
+
+		<record model="mail.template" id="template_cs">
+			<field name="name">Notification</field>
+			<field name="email_from">gaas@jakartamrt.co.id</field>
+			<field name="email_to">${ctx.get('email')}</field>
+			<field name="subject">Closure Summary</field>
+			<field name="model_id" ref="a_send_email.model_send_email_notification" />
+			<field name="auto_delete" eval="False" />
+			<field name="body_html">
+				<![CDATA[ 
+					<p>
+						[THIS IS AUTOMATIC MESSAGING SYSTEM. NO REPLY]
+					</p>
+					<div>
+						Dear User,
+						<br/>
+						<br/>
+						The closure summary of Project ${ctx.get('judul_kontrak')} - ${ctx.get('no_kontrak')} with ${ctx.get('organization')} have realeased.
+						<br/>
+						<br/>
+						To view the detail BAST, please visit to <a href="https://erp.falahtech.com">https://erp.falahtech.com</a>
+					<div/>
+					<p>
+						Thanks.
+					</p>
+				]]>
+			</field>
+		</record>
+
+	</data>
+</odoo>

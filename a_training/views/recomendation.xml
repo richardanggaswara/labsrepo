@@ -1,0 +1,55 @@
+<odoo>
+    <data noupdate="1">
+
+        <record id="training_recomendation_form_view" model="ir.ui.view">
+            <field name="name">Training Recommendation</field>
+            <field name="model">training.recomendation</field>
+            <field name="arch" type="xml">
+                <form string="Training Recomendation">
+                    <sheet>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="station_id"/>
+                            <field name="department_id"/>
+                            <field name="job_id"/>
+                            <field name="remarks"/>
+                        </group>
+                        <notebook>
+                            <page string="Recommendation" force_save="1">
+                                <field name="training_topic" nolabel="1" widget="one2many_list">
+                                    <tree editable="bottom" delete="1" create="1">
+                                        <!-- <field name="planned_date"/> -->
+                                        <!-- <field name="notes"/> -->
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="training_recomendation_tree_view" model="ir.ui.view">
+            <field name="name">Training Recommendation</field>
+            <field name="model">training.recomendation</field>
+            <!-- <field name="view_type" /> -->
+            <field name="arch" type="xml">
+                <tree string="Training Recommendation">
+                    <!-- <field name="name"/> -->
+                    <field name="employee_id"/>
+                    <field name="station_id"/>
+                    <field name="department_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="training_recomendation_action" model="ir.actions.act_window">
+            <field name="name">Training Recommendation</field>
+            <field name="res_model">training.recomendation</field>
+            <field name="view_id" ref="training_recomendation_form_view"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+        </record>
+    
+    </data>
+</odoo>

@@ -1,0 +1,47 @@
+<odoo>
+  <data>
+
+      <menuitem name="Training" id="event.event_main_menu" sequence="4" groups="event.group_event_user" web_icon="a_training,static/description/icon.png"/>
+
+      <menuitem name="Training"  id="event.menu_event_event" action="event.action_event_view" parent="event.event_main_menu" />
+
+      <menuitem name="Training Test"
+        id="survey.menu_surveys"
+        sequence="70"
+        groups="survey.group_survey_user"
+        parent="event.event_main_menu"
+        web_icon="survey,static/description/icon.png"/>
+
+      <menuitem name="Training Test" id="survey.menu_survey_form" action="survey.action_survey_form" parent="survey.menu_surveys" sequence="1"/>
+
+      <menuitem name="Training Recomendation" id="training_recomendation" action="training_recomendation_action" parent="event.event_main_menu"/>
+
+      <!-- <menuitem name="Training Recommendation" id="training_recomendation_form" parent="event.event_main_menu" sequence="5"/> -->
+
+
+      <!-- <menuitem name="Data Master" id="data_master_menu" 
+                sequence="0" 
+                web_icon="data_master,static/description/icon.png" />
+
+        <menuitem name="Data Station" id="data_station_menu" 
+                  sequence="0"
+                  parent="data_master_menu" 
+                  web_icon="data_master,static/description/icon.png"
+                  action="hr.menu_hr_department_tree"
+                   />
+        <menuitem name="Data Division" id="data_division_menu" 
+                  sequence="0"
+                  parent="data_master_menu" 
+                  web_icon="data_master,static/description/icon.png"
+                  action="hr.menu_hr_department_tree"
+                   />
+        <menuitem name="Position" id="position_menu" 
+                  sequence="0"
+                  parent="data_master_menu" 
+                  web_icon="data_master,static/description/icon.png"
+                  action="hr.menu_view_hr_job"
+                   /> -->
+
+
+  </data>
+</odoo>

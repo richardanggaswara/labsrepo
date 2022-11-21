@@ -1,0 +1,658 @@
+<odoo>
+    <data noupdate="0">
+
+        <record id="hr_employee_form" model="ir.ui.view">
+            <field name="name">hr.employee.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='job_id']" position="after">
+                    <field name="station_id"/>
+                </xpath>
+                <xpath expr="//notebook//page[@name='hr_settings']" position="after">
+                    <page string="Training Competency">
+                        <!-- <field name="topic_ids">
+                            <tree editable="bottom">
+                                <field name="name"/>
+                                <field name="value"/>
+                            </tree>
+                        </field> -->
+                        <group>
+                            <group string="Station Operation">
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_mrt" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_mrt" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_mrt_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_mrt_p" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_mrt_p" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_mrt_p_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_as" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_as" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_as_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_psdm" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_psdm" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_psdm_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                            </group>
+                            <group string="Product Knowladge">
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="k_ticket" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="k_ticket" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="k_ticket_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="k_ticket_u" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="k_ticket_u" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="k_ticket_u_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="k_ticket_n" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="k_ticket_n" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="k_ticket_n_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="k_ticket_ap" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="k_ticket_ap" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="k_ticket_ap_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="k_ticket_ar" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="k_ticket_ar" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="k_ticket_ar_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="k_ticket_o" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="k_ticket_o" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="k_ticket_o_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="k_ticket_p" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="k_ticket_p" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="k_ticket_p_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Complaint Handling Management">
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="p_ticket_2q" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="p_ticket_2q" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="p_ticket_2q_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="p_ticket_3q" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="p_ticket_3q" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="p_ticket_3q_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="p_ticket_4q" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="p_ticket_4q" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="p_ticket_4q_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="pp_ticket_1q" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="pp_ticket_1q" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="pp_ticket_1q_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="pp_ticket_2q" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="pp_ticket_2q" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="pp_ticket_2q_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="pp_ticket_3q" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="pp_ticket_3q" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="pp_ticket_3q_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="pp_ticket_4q" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="pp_ticket_4q" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="pp_ticket_4q_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                            </group>
+
+                            <group string="Passanger Traffic Management">
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="cr_mng" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="cr_mng" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="cr_mng_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="cr_mngae" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="cr_mngae" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="cr_mngae_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                            </group>
+                        </group>
+
+                        <group>
+                            <group string="Business Continuity Management">
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_p3k" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_p3k" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_p3k_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_pew" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_pew" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_pew_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_ptd" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_ptd" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_ptd_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_pph" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_pph" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_pph_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_ppfb" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_ppfb" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_ppfb_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_pses" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_pses" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_pses_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_scba" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_scba" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_scba_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_ppwb" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_ppwb" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_ppwb_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_pppt" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_pppt" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_pppt_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                            </group>
+
+                            <group string="Customer Service Management">
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_pp" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_pp" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_pp_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_dh" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_dh" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_dh_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                            </group>
+                        </group>
+
+                        <group>
+                            <group string="Business Continuity Management">
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_cash2" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_cash2" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_cash2_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_cash3" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_cash3" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_cash3_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_cash4" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_cash4" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_cash4_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_rev2" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_rev2" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_rev2_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_rev3" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_rev3" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_rev3_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_rev4" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_rev4" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_rev4_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_iup" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_iup" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_iup_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_brib" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_brib" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_brib_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                            </group>
+                        </group>
+
+                        <group>
+                            <group string="Technology Savvy">
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_pcm3" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_pcm3" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_pcm3_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_pcm4" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_pcm4" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_pcm4_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_scuat3" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_scuat3" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_scuat3_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_scuat4" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_scuat4" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_scuat4_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_ppa" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_ppa" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_ppa_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_fscada4" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_fscada4" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_fscada4_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_bas" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_bas" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_bas_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_tvs" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_tvs" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_tvs_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_gss" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_gss" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_gss_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_psle2" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_psle2" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_psle2_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_psle3" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_psle3" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_psle3_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_psle4" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_psle4" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_psle4_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_tsle2" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_tsle2" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_tsle2_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_tsle3" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_tsle3" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_tsle3_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_tsle4" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_tsle4" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_tsle4_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_lift1" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_lift1" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_lift1_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_lift3" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_lift3" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_lift3_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_lift4" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_lift4" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_lift4_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_tom2" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_tom2" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_tom2_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_tom3" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_tom3" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_tom3_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_tom4" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_tom4" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_tom4_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_psd" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_psd" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_psd_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                                <div class="oe_inline" style="min-width:10px;">
+                                    <label class="oe_inline" for="t_fire" style="min-width:400px;font-weight: bold;"/>
+                                    <field class="oe_inline" name="t_fire" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                    of
+                                    <field class="oe_inline" name="t_fire_of" readonly="1" nolabel="1" style="min-width:10px;"/>
+                                </div>
+                            </group>
+                        </group>
+
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_job_form" model="ir.ui.view">
+            <field name="name">hr.job.form</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr.view_hr_job_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//sheet//div[3]" position="replace">
+                    <notebook>
+                        <page string="Job Description">
+                            <div attrs="{'invisible': [('state', '!=', 'recruit')]}">
+                                <label for="description"/>
+                                <field name="description"/>
+                            </div>
+                        </page>
+                        <page string="Competency Map">
+                            <field name="topic_ids">
+                                <tree editable="bottom" create="0" delete="0">
+                                    <field name="name"/>
+                                    <field name="value"/>
+                                </tree>
+                            </field>
+                            <!-- <group>
+                            <group string="Station Operation">
+                                <label for="t_mrt" style="min-width:400px;"/>
+                                <field name="t_mrt" nolabel="1" style="min-width:50px;"/>
+                                <label for="t_mrt_p" style="min-width:400px;"/>
+                                <field name="t_mrt_p" nolabel="1" style="min-width:50px;"/>
+                                <label for="t_as" style="min-width:400px;"/>
+                                <field name="t_as" nolabel="1" style="min-width:50px;"/>
+                                <label for="t_psdm" style="min-width:400px;"/>
+                                <field name="t_psdm" nolabel="1" style="min-width:50px;"/>
+                            </group>
+                            <group string="Product Knowladge">
+                                <label for="k_ticket" style="min-width:400px;"/>
+                                <field name="k_ticket" nolabel="1" style="min-width:50px;"/>
+                                <label for="k_ticket_u" style="min-width:400px;"/>
+                                <field name="k_ticket_u" nolabel="1" style="min-width:50px;"/>
+                                <label for="k_ticket_n" style="min-width:400px;"/>
+                                <field name="k_ticket_n" nolabel="1" style="min-width:50px;"/>
+                                <label for="k_ticket_ap" style="min-width:400px;"/>
+                                <field name="k_ticket_ap" nolabel="1" style="min-width:50px;"/>
+                                <label for="k_ticket_ar" style="min-width:400px;"/>
+                                <field name="k_ticket_ar" nolabel="1" style="min-width:50px;"/>
+                                <label for="k_ticket_o" style="min-width:400px;"/>
+                                <field name="k_ticket_o" nolabel="1" style="min-width:50px;"/>
+                                <label for="k_ticket_p" style="min-width:400px;"/>
+                                <field name="k_ticket_p" nolabel="1" style="min-width:50px;"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Complaint Handling Management">
+                                <label for="p_ticket_2q" style="min-width:400px;"/>
+                                <field name="p_ticket_2q" nolabel="1" style="min-width:50px;"/>
+                                <label for="p_ticket_3q" style="min-width:400px;"/>
+                                <field name="p_ticket_3q" nolabel="1" style="min-width:50px;"/>
+                                <label for="p_ticket_4q" style="min-width:400px;"/>
+                                <field name="p_ticket_4q" nolabel="1" style="min-width:50px;"/>
+                                <label for="pp_ticket_1q" style="min-width:400px;"/>
+                                <field name="pp_ticket_1q" nolabel="1" style="min-width:50px;"/>
+                                <label for="pp_ticket_2q" style="min-width:400px;"/>
+                                <field name="pp_ticket_2q" nolabel="1" style="min-width:50px;"/>
+                                <label for="pp_ticket_3q" style="min-width:400px;"/>
+                                <field name="pp_ticket_3q" nolabel="1" style="min-width:50px;"/>
+                                <label for="pp_ticket_4q" style="min-width:400px;"/>
+                                <field name="pp_ticket_4q" nolabel="1" style="min-width:50px;"/>
+                            </group>
+                        </group> -->
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="event_event_form" model="ir.ui.view">
+            <field name="name">event.event.form</field>
+            <field name="model">event.event</field>
+            <field name="inherit_id" ref="event.view_event_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='button_confirm']" position="attributes">
+                    <attribute name="groups">a_role.group_station_manager</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_confirm']" position="attributes">
+                    <attribute name="groups">a_role.group_section_head</attribute>
+                </xpath>
+                <xpath expr="//field[@name='organizer_id']" position="before">
+                    <field name="training_id"/>
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="trainer_id"/>
+                </xpath>
+                <xpath expr="//field[@name='event_type_id']" position="before">
+                    <field name="pre_test_id"/>
+                    <field name="post_test_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="event_registrasion_form" model="ir.ui.view">
+            <field name="name">event.registration.form</field>
+            <field name="model">event.registration</field>
+            <field name="inherit_id" ref="event.view_event_registration_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/group" position="before">
+                    <div class="oe_button_box" name="button_box" groups="base.group_user">
+                        <button name="button_test" type="object" class="oe_stat_button" icon="fa-users">
+                            <field name="pre_test_ids" widget="statinfo" string="Pre-Test Form"/>
+                        </button>
+                        <button name="button_test" type="object" class="oe_stat_button" icon="fa-users">
+                            <field name="post_test_ids" widget="statinfo" string="Post-Test Form"/>
+                        </button>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="before">
+                    <field name="employee_id"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="training_topic_form" model="ir.ui.view">
+            <field name="name">training.topic.form</field>
+            <field name="model">training.topic</field>
+            <field name="arch" type="xml">
+                <form string="Training Topic">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="desc"/>
+                            <field name="competency_id"/>
+                            <field name="code" placeholder="Minimal 3 Karakter (Contoh: TOC)"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="training_topic_tree" model="ir.ui.view">
+            <field name="name">training.topic.tree</field>
+            <field name="model">training.topic</field>
+            <field name="arch" type="xml">
+                <tree string="Training Topic">
+                    <field name="name"/>
+                    <field name="desc"/>
+                    <field name="competency_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="training_topic_action" model="ir.actions.act_window">
+            <field name="name">Training Topic</field>
+            <field name="res_model">training.topic</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- <record id="training_recomendation_form" model="ir.ui.view">
+            <field name="name">training.recomendation.form</field>
+            <field name="model">training.recomendation</field>
+            <field name="arch" type="xml">
+                <form string="Training Recommendation">
+                    <sheet>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="station_id"/>
+                            <field name="department_id"/>
+                            <field name="job_id"/>
+                            <field name="remarks"/>
+                        </group>
+                        <notebook>
+                            <page string="Recommendation" force_save="1">
+                                <field name="training_topic" nolabel="1" widget="one2many_list">
+                                    <tree editable="bottom" delete="1" create="1">
+                                        <field name="planned_date" />
+                                        <field name="notes"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    
+        <record id="training_recomendation_tree" model="ir.ui.view">
+            <field name="name">training.recommendation.tree</field>
+            <field name="model">training.recomendation</field>
+            <field name="view_type" />
+            <field name="arch" type="xml">
+                <tree string="Training Recommendation">
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="station_id"/>
+                    <field name="department_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="training_recomendation_action" model="ir.actions.act_window">
+            <field name="name">training_recomendation_action</field>
+            <field name="res_model">training.recomendation</field>
+            <field name="view_id" ref="training_recomendation_form"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record> -->
+
+        <record model="ir.ui.view" id="survey_question_inherit_form">
+            <field name="name">Inherit Form view for survey question</field>
+            <field name="model">survey.question</field>
+            <field name="inherit_id" ref="survey.survey_question_form" />
+            <field name="arch" type="xml">
+                
+                        <xpath expr="/form/sheet/notebook/page/field[@name='labels_ids']" position="replace">
+                            <field name="labels_ids" string="Type of answers" context="{'default_question_id': active_id}" attrs="{'invisible': [('type', 'not in', ['simple_choice', 'multiple_choice', 'matrix'])]}">
+                                <tree editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="value" string="Choices"/>
+                                    <field name="quizz_mark" groups=""/>
+                                </tree>
+                            </field>
+                        </xpath>
+                        <!-- <xpath expr="//field[@name='quizz_mark']" position="attributes">
+                            <attribute name="groups"></attribute>
+                        </xpath> -->
+                    
+            </field>
+        </record>
+
+    </data>
+</odoo>

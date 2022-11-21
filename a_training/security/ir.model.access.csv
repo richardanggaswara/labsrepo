@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_training_topic,training.topic,model_training_topic,,1,1,1,1
+access_training_competency,training.competency,model_training_competency,,1,1,1,1
+access_competency_map,competency.map,model_competency_map,,1,1,1,1
+training_recomendation,training.recomendation,model_training_recomendation,,1,1,1,1
